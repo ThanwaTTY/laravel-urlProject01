@@ -33,7 +33,10 @@
               <form action="/url/{{ $url->id }}/switchupdate" method="post">
                 {{ csrf_field() }}
               <input name="_method" type="hidden" value="DELETE">
-              <button type="submit" class="btn btn-xs btn-danger">  @if( $url->status == '0' )OPEN @else CLOSE @endif </button>
+         @if( $url->status == '0' )
+                 <button type="submit" class="btn btn-xs btn-default btn-lg btn-block">CLOSE</button>
+         @else <button type="submit" class="btn btn-xs btn-primary btn-lg btn-block">OPEN</button>
+         @endif
               </form>
 
             </label>
