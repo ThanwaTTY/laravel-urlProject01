@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="css/switch.css">
 <div class="container">
         <h1>URL</h1>
         <a href="url/create" type="Text" class="btn btn-primary">New URL</a>
@@ -10,7 +11,9 @@
             <th>Title</th>
             <th>URL</th>
             <th>Description</th>
-            <th>Actions</th>
+            <th>Status</th>
+            <th>Close/Open</th>
+            <th width="200">Actions</th>
           </tr>
           @foreach ($urls as $url)
           <tr>
@@ -18,6 +21,23 @@
             <td>{{ $url->title }}</td>
             <td>{{ $url->url }}</td>
             <td>{{ $url->description }} </td>
+            <th>
+
+              <label class="switch">
+                <input type="checkbox" @if( $url->status == '0' )checked disabled @else disabled @endif>
+                <div class="slider round"></div>
+              </label>
+
+            </th>
+            <td>
+              <form action="/url/{{ $url->id }}/switchupdate" method="post">
+                {{ csrf_field() }}
+              <input name="_method" type="hidden" value="DELETE">
+              <button type="submit" class="btn btn-xs btn-danger">  @if( $url->status == '0' )OPEN @else CLOSE @endif </button>
+              </form>
+
+            </label>
+            </td>
             <td>
             <form action="/url/{{ $url->id }}" method="post">
               {{ csrf_field() }}

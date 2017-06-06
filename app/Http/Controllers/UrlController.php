@@ -50,4 +50,23 @@ class UrlController extends Controller
 
         return redirect('url');
     }
+
+    public function status(Request $request, $id)
+    {
+
+              //$url = Url::find($id);
+              //return "Switch:".$id.' title:'.$url->title;
+              //$url = Url::find($id);
+              $url = Url::find($id);
+              if ($url->status==1) {
+                  $url->update(['status' => 0]);
+              } else if($url->status==0) {
+                  $url->update(['status' => 1]);
+              }
+
+              //$url->update(['status' => 2]);
+              return redirect('url');
+    }
+
+
 }

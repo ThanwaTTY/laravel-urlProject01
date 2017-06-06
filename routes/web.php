@@ -25,3 +25,4 @@ Route::get('/url/{url}/edit', 'UrlController@edit');
 Route::post('/url/{url}', 'UrlController@update');
 Route::get('/url/create', 'UrlController@create');
 Route::delete('/url/{url}', 'UrlController@destroy');
+Route::delete('/url/{url}/switchupdate', 'UrlController@status');
