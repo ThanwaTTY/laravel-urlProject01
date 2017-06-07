@@ -68,5 +68,12 @@ class UrlController extends Controller
               return redirect('url');
     }
 
+    public function show($id)
+    {
+        //$urls = Url::paginate(10);
+        $url = Url::find($id);
+        return view('url.index', compact('urlsshow') );
+        //return 'TEST'.$id;
+    }
 
 }

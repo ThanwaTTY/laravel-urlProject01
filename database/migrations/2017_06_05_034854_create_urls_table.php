@@ -19,6 +19,7 @@ class CreateUrlsTable extends Migration
           $table->string('url');
           $table->text('description');
           $table->integer('status')->default('0');
+          $table->date('dateadd');
           $table->timestamps();
       });
 

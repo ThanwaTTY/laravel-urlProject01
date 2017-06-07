@@ -11,6 +11,7 @@
             <th>Title</th>
             <th>URL</th>
             <th>Description</th>
+            <th>Date</th>
             <th>Status</th>
             <th>Close/Open</th>
             <th width="200">Actions</th>
@@ -21,6 +22,7 @@
             <td>{{ $url->title }}</td>
             <td>{{ $url->url }}</td>
             <td>{{ $url->description }} </td>
+            <td>{{ $url->dateadd }} </td>
             <th>
 
               <label class="switch">
@@ -47,13 +49,20 @@
             <input name="_method" type="hidden" value="DELETE">
             <a href="url/{{ $url->id }}/edit" type="Text" class="btn btn-xs btn-default">Edit</a>
             <button type="submit" class="btn btn-xs btn-danger">Delete</button>
-          </form>
+            </form>
             </td>
-          </tr>
+            </tr>
 
         @endforeach
 
         </table>
+
+
+
+
+
+
+
         {{ $urls->links() }}
 </div>
 @endsection
