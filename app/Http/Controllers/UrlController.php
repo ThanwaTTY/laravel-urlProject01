@@ -22,7 +22,13 @@ class UrlController extends Controller
 
     public function store(Request $request)
     {
-        Url::create($request->all() );
+        Url::create([
+                'title' => $request->title,
+                'url'   => $request->url,
+                'description' => $request->description,
+                'dateadd' => $request->dateadd,
+                'user_id' => auth()->user() ->id
+        ]);
 
         return redirect('url');
     }
@@ -38,7 +44,13 @@ class UrlController extends Controller
     {
         $url = Url::find($id);
 
-        $url->update($request->all() );
+        $url->update([
+                'title' => $request->title,
+                'url'   => $request->url,
+                'description' => $request->description,
+                'dateadd' => $request->dateadd,
+                'user_id' => auth()->user() ->id
+        ]);
 
         return redirect('url');
     }

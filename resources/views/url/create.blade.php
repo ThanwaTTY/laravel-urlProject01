@@ -1,14 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="{{ asset('jquery/jquery-ui.css') }}" rel="stylesheet">
-<link href="{{ asset('jquery/jquery-ui-timepicker-addon.css') }}" rel="stylesheet">
 
-
-<script src="{{ asset('jquery/jquery-1.10.2.min.js') }}"></script>
-<script src="{{ asset('jquery/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('jquery/jquery-ui-timepicker-addon.js') }}"></script>
-<script src="{{ asset('jquery/jquery-ui-sliderAccess.js') }}"></script>
 
 
 <script type="text/javascript">
